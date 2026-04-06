@@ -1,0 +1,75 @@
+{
+  "@@locale": "en",
+  "appTitle": "Lecture Recorder",
+  "recordingsTitle": "Recordings",
+  "settingsTitle": "Settings",
+  "exitWhileRecordingTitle": "Recording in progress",
+  "exitWhileRecordingMessage": "A recording is still running. Exit the app anyway?",
+  "cancelAction": "Cancel",
+  "exitAction": "Exit",
+  "switchCourseTitle": "Switch course?",
+  "switchCourseMessage": "Stop recording {currentCourse} and start {nextCourse} instead?",
+  "@switchCourseMessage": {
+    "placeholders": {
+      "currentCourse": {},
+      "nextCourse": {}
+    }
+  },
+  "switchAction": "Switch",
+  "stopAction": "Stop",
+  "resumeAction": "Resume",
+  "pauseAction": "Pause",
+  "androidStorageHint": "Android recordings are stored in the app folder so they stay available for upload and cleanup.",
+  "statusIdle": "Ready",
+  "statusStarting": "Starting",
+  "statusRecording": "Recording",
+  "statusPaused": "Paused",
+  "statusStopping": "Stopping",
+  "statusError": "Needs attention",
+  "currentCourseLabel": "Current course",
+  "notRecordingValue": "Not recording",
+  "elapsedLabel": "Elapsed",
+  "segmentLabel": "Segment",
+  "segmentationTitle": "Automatic segmentation",
+  "segmentationSubtitle": "Split long recordings automatically.",
+  "languageTitle": "Language",
+  "languageSystem": "Follow system",
+  "languageEnglish": "English",
+  "languageChinese": "Chinese",
+  "audioQualityTitle": "Audio quality",
+  "audioQualityLow": "Low",
+  "audioQualityStandard": "Standard",
+  "audioQualityHigh": "High",
+  "androidSplitTitle": "Android split by file size",
+  "windowsSplitTitle": "Windows split by duration",
+  "maxFileSizeLabel": "Maximum file size",
+  "segmentMinutesLabel": "Segment duration",
+  "minutesShort": "min",
+  "courseManagementTitle": "Courses",
+  "addCourseAction": "Add course",
+  "editCourseAction": "Edit course",
+  "deleteCourseTitle": "Delete course?",
+  "deleteCourseMessage": "Remove {courseName} from the home screen? Existing recordings will stay on disk.",
+  "@deleteCourseMessage": {
+    "placeholders": {
+      "courseName": {}
+    }
+  },
+  "deleteAction": "Delete",
+  "storageDirectoryTitle": "Storage directory",
+  "courseNameLabel": "Course name",
+  "saveAction": "Save",
+  "recordingsEmptyState": "No recordings yet.",
+  "refreshAction": "Refresh",
+  "groupByDay": "By day",
+  "groupByCourse": "By course",
+  "playAction": "Play",
+  "openLocationAction": "Open location",
+  "deleteRecordingTitle": "Delete recording?",
+  "deleteRecordingMessage": "Delete {fileName} permanently?",
+  "@deleteRecordingMessage": {
+    "placeholders": {
+      "fileName": {}
+    }
+  }
+}

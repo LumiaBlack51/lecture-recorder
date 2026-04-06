@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_channel_name">后台录音</string>
+    <string name="notification_channel_description">在应用转入后台后继续保持课堂录音，并通过通知持续显示进度。</string>
+    <string name="notification_title_recording">课堂录音正在后台录制</string>
+    <string name="notification_title_paused">课堂录音已暂停</string>
+    <string name="notification_text_idle">正在准备录音器。</string>
+    <string name="notification_text_recording">正在后台录制 %1$s。</string>
+    <string name="notification_text_paused">当前暂停在 %1$s。</string>
+    <string name="notification_text_progress">%1$s · 第 %2$s 段 · %3$s</string>
+    <string name="notification_action_pause">暂停</string>
+    <string name="notification_action_resume">继续</string>
+    <string name="notification_action_stop">停止</string>
+</resources>

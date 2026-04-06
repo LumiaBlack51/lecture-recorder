@@ -1,0 +1,75 @@
+{
+  "@@locale": "zh",
+  "appTitle": "课堂录音",
+  "recordingsTitle": "录音列表",
+  "settingsTitle": "设置",
+  "exitWhileRecordingTitle": "正在录音",
+  "exitWhileRecordingMessage": "当前录音尚未结束，仍要退出应用吗？",
+  "cancelAction": "取消",
+  "exitAction": "退出",
+  "switchCourseTitle": "切换课程？",
+  "switchCourseMessage": "停止录制 {currentCourse}，并开始录制 {nextCourse} 吗？",
+  "@switchCourseMessage": {
+    "placeholders": {
+      "currentCourse": {},
+      "nextCourse": {}
+    }
+  },
+  "switchAction": "切换",
+  "stopAction": "停止",
+  "resumeAction": "继续",
+  "pauseAction": "暂停",
+  "androidStorageHint": "Android 录音会保存在应用专用目录中，方便后续上传和整理。",
+  "statusIdle": "待命",
+  "statusStarting": "开始中",
+  "statusRecording": "录音中",
+  "statusPaused": "已暂停",
+  "statusStopping": "停止中",
+  "statusError": "需要处理",
+  "currentCourseLabel": "当前课程",
+  "notRecordingValue": "未录音",
+  "elapsedLabel": "已录时长",
+  "segmentLabel": "分段",
+  "segmentationTitle": "自动分段",
+  "segmentationSubtitle": "自动拆分较长的录音文件。",
+  "languageTitle": "语言",
+  "languageSystem": "跟随系统",
+  "languageEnglish": "English",
+  "languageChinese": "中文",
+  "audioQualityTitle": "音质",
+  "audioQualityLow": "低",
+  "audioQualityStandard": "标准",
+  "audioQualityHigh": "高",
+  "androidSplitTitle": "Android 按文件大小分段",
+  "windowsSplitTitle": "Windows 按时长分段",
+  "maxFileSizeLabel": "最大文件大小",
+  "segmentMinutesLabel": "分段时长",
+  "minutesShort": "分钟",
+  "courseManagementTitle": "课程管理",
+  "addCourseAction": "添加课程",
+  "editCourseAction": "编辑课程",
+  "deleteCourseTitle": "删除课程？",
+  "deleteCourseMessage": "将 {courseName} 从主页移除？已有录音不会被删除。",
+  "@deleteCourseMessage": {
+    "placeholders": {
+      "courseName": {}
+    }
+  },
+  "deleteAction": "删除",
+  "storageDirectoryTitle": "存储目录",
+  "courseNameLabel": "课程名称",
+  "saveAction": "保存",
+  "recordingsEmptyState": "还没有录音文件。",
+  "refreshAction": "刷新",
+  "groupByDay": "按日期",
+  "groupByCourse": "按课程",
+  "playAction": "播放",
+  "openLocationAction": "打开位置",
+  "deleteRecordingTitle": "删除录音？",
+  "deleteRecordingMessage": "确定永久删除 {fileName} 吗？",
+  "@deleteRecordingMessage": {
+    "placeholders": {
+      "fileName": {}
+    }
+  }
+}
