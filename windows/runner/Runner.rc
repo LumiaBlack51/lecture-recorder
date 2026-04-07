@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.must.lecture_recorder" "\0"
+            VALUE "CompanyName", "com.lecturerecorder.app" "\0"
             VALUE "FileDescription", "lecture_recorder" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "lecture_recorder" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2026 com.must.lecture_recorder. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2026 com.lecturerecorder.app. All rights reserved." "\0"
             VALUE "OriginalFilename", "lecture_recorder.exe" "\0"
             VALUE "ProductName", "lecture_recorder" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
