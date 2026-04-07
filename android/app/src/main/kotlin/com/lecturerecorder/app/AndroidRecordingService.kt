@@ -1,4 +1,4 @@
-package com.must.lecture_recorder.lecture_recorder
+package com.lecturerecorder.app
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -220,9 +220,9 @@ class AndroidRecordingService : Service(), RecordingEventListener {
         private const val notificationChannelId = "lecture_recorder_background_v2"
         private const val notificationId = 4106
         private const val actionTogglePause =
-            "com.must.lecture_recorder.lecture_recorder.action.TOGGLE_PAUSE"
+            "com.lecturerecorder.app.action.TOGGLE_PAUSE"
         private const val actionStop =
-            "com.must.lecture_recorder.lecture_recorder.action.STOP"
+            "com.lecturerecorder.app.action.STOP"
 
         fun start(context: Context) {
             val intent = Intent(context, AndroidRecordingService::class.java)

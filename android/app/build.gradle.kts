@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.must.lecture_recorder.lecture_recorder"
+    namespace = "com.lecturerecorder.app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -20,7 +20,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.must.lecture_recorder.lecture_recorder"
+        applicationId = "com.lecturerecorder.app"
         minSdk = 26
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode

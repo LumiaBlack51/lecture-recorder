@@ -1,4 +1,4 @@
-package com.must.lecture_recorder.lecture_recorder
+package com.lecturerecorder.app
 
 import android.content.Context
 import android.media.MediaScannerConnection
