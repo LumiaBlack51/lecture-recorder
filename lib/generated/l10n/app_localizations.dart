@@ -170,7 +170,7 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get androidSplitTitle => 'Android split by file size';
   @override
-  String get windowsSplitTitle => 'Windows split by duration';
+  String get windowsSplitTitle => 'Desktop split by duration';
   @override
   String get maxFileSizeLabel => 'Maximum file size';
   @override
@@ -293,7 +293,7 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get androidSplitTitle => 'Android 按文件大小分段';
   @override
-  String get windowsSplitTitle => 'Windows 按时长分段';
+  String get windowsSplitTitle => '桌面端按时长分段';
   @override
   String get maxFileSizeLabel => '最大文件大小';
   @override

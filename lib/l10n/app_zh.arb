@@ -41,7 +41,7 @@
   "audioQualityStandard": "标准",
   "audioQualityHigh": "高",
   "androidSplitTitle": "Android 按文件大小分段",
-  "windowsSplitTitle": "Windows 按时长分段",
+  "windowsSplitTitle": "桌面端按时长分段",
   "maxFileSizeLabel": "最大文件大小",
   "segmentMinutesLabel": "分段时长",
   "minutesShort": "分钟",

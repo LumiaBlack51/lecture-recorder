@@ -18,7 +18,7 @@ enum AudioQualityPreset {
     }
   }
 
-  int get windowsBitRate {
+  int get desktopBitRate {
     switch (this) {
       case AudioQualityPreset.low:
         return 64000;

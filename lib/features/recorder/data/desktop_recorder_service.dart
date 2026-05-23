@@ -8,7 +8,7 @@ import '../../../shared/recording_naming.dart';
 import '../domain/recorder_models.dart';
 import '../domain/recorder_service.dart';
 
-class WindowsRecorderService implements RecorderService {
+class DesktopRecorderService implements RecorderService {
   final AudioRecorder _recorder = AudioRecorder();
   final _eventsController = StreamController<RecorderEvent>.broadcast();
 
@@ -155,7 +155,7 @@ class WindowsRecorderService implements RecorderService {
     await _recorder.start(
       RecordConfig(
         encoder: AudioEncoder.aacLc,
-        bitRate: request.settings.audioQuality.windowsBitRate,
+        bitRate: request.settings.audioQuality.desktopBitRate,
         sampleRate: request.settings.audioQuality.sampleRate,
       ),
       path: filePath,

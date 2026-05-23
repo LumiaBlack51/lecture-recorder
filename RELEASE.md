@@ -2,6 +2,7 @@
 
 ## Assets
 - `lecture-recorder-windows.zip`: Windows desktop build bundle
+- `lecture-recorder_1.0.0+1_amd64.deb`: Linux desktop Debian package
 - `app-release.apk`: Android APK build
 
 ## Windows
@@ -19,3 +20,8 @@
 - On Android, recordings are stored in `Music/Recordings/Lecture Recorder`.
 - The app includes neutral sample course names only. Replace them in Settings if needed.
 - The Windows build must stay together with its bundled DLL and data files.
+
+## Linux
+1. Download `lecture-recorder_1.0.0+1_amd64.deb`.
+2. Install it with your system package installer or `sudo apt install ./lecture-recorder_1.0.0+1_amd64.deb`.
+3. Open Lecture Recorder from the app launcher.

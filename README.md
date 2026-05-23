@@ -1,13 +1,13 @@
 # Lecture Recorder
 
-Lecture Recorder is a Flutter app for Android and Windows that provides one-tap course-based recording, automatic segmentation, bilingual Chinese and English UI, and a recordings manager for playback, sharing, deletion, and folder access.
+Lecture Recorder is a Flutter app for Android, Windows, and Linux that provides one-tap course-based recording, automatic segmentation, bilingual Chinese and English UI, and a recordings manager for playback, sharing, deletion, and folder access.
 
 ## Highlights
 - One-tap recording from customizable course buttons.
 - Android background recording through a foreground service notification.
 - Automatic segmentation:
   - Android by file size.
-  - Windows by segment duration.
+  - Desktop by segment duration.
 - Settings for language, audio quality, segmentation, and course management.
 - Recordings list with playback, sharing, deletion, refresh, and open-location actions.
 - Public Android storage under `Music/Recordings/Lecture Recorder`.
@@ -33,14 +33,14 @@ You can rename or replace them from the in-app settings screen.
 - Requests microphone, notification, and storage-related permissions as needed.
 - Notification shows recording progress and exposes pause and stop actions.
 
-### Windows
+### Windows and Linux
 - Records to AAC/M4A through the desktop recording backend.
 - Supports time-based segmentation.
-- Can open the recording folder directly in File Explorer.
+- Can open the recording folder directly in the platform file manager.
 
 ## Storage
 - Android: `Music/Recordings/Lecture Recorder/<course-name>/`
-- Windows: app documents directory under `recordings/<course-name>/`
+- Windows/Linux: app documents directory under `recordings/<course-name>/`
 
 ## Tech Stack
 - Flutter
@@ -54,7 +54,8 @@ You can rename or replace them from the in-app settings screen.
 - Flutter stable `3.41.4` or later
 - Dart `3.11`
 - Android SDK
-- Windows desktop Flutter tooling
+- Windows or Linux desktop Flutter tooling
+- Linux packaging tools: `libgtk-3-dev`, `libgstreamer1.0-dev`, `libgstreamer-plugins-base1.0-dev`, `libpulse-dev`, `libasound2-dev`, `lld`, and `fakeroot`
 
 ### Setup
 ```bash
@@ -65,13 +66,20 @@ flutter doctor
 ### Run
 ```bash
 flutter run -d windows
+flutter run -d linux
 flutter run -d <android-device-id>
 ```
 
 ### Build
 ```bash
 flutter build windows
+flutter build linux --release
 flutter build apk --release
+```
+
+### Linux Debian Package
+```bash
+scripts/package_deb.sh
 ```
 
 ## Validation

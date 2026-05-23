@@ -162,7 +162,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                             onEditingComplete: _persistPendingNumericValues,
                             onTapOutside: (_) => _persistPendingNumericValues(),
                           ),
-                        if (Platform.isWindows)
+                        if (Platform.isWindows || Platform.isLinux)
                           TextFormField(
                             controller: _windowsSegmentMinutesController,
                             keyboardType: TextInputType.number,

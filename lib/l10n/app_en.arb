@@ -41,7 +41,7 @@
   "audioQualityStandard": "Standard",
   "audioQualityHigh": "High",
   "androidSplitTitle": "Android split by file size",
-  "windowsSplitTitle": "Windows split by duration",
+  "windowsSplitTitle": "Desktop split by duration",
   "maxFileSizeLabel": "Maximum file size",
   "segmentMinutesLabel": "Segment duration",
   "minutesShort": "min",

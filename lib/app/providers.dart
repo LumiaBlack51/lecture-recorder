@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../features/recorder/data/android_recorder_service.dart';
-import '../features/recorder/data/windows_recorder_service.dart';
+import '../features/recorder/data/desktop_recorder_service.dart';
 import '../features/recorder/domain/recorder_service.dart';
 import '../features/recorder/presentation/recording_controller.dart';
 import '../features/recordings/data/recordings_repository.dart';
@@ -40,7 +40,7 @@ final settingsControllerProvider =
 final recorderServiceProvider = Provider<RecorderService>((ref) {
   final service = Platform.isAndroid
       ? AndroidRecorderService()
-      : WindowsRecorderService();
+      : DesktopRecorderService();
   ref.onDispose(service.dispose);
   return service;
 });
