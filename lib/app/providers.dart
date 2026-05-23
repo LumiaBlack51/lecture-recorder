@@ -14,8 +14,8 @@ import '../features/settings/presentation/settings_controller.dart';
 import '../services/platform_file_service.dart';
 import '../services/storage_service.dart';
 
-final sharedPreferencesProvider = Provider<SharedPreferences>(
-  (ref) => throw UnimplementedError('SharedPreferences override is missing.'),
+final sharedPreferencesProvider = Provider<Future<SharedPreferences>>(
+  (ref) => SharedPreferences.getInstance(),
 );
 
 final storageServiceProvider = Provider<StorageService>((ref) {

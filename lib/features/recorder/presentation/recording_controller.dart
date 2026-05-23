@@ -68,17 +68,29 @@ class RecordingUiState {
 
 class RecordingController extends StateNotifier<RecordingUiState> {
   RecordingController(this._ref) : super(const RecordingUiState()) {
-    _service = _ref.read(recorderServiceProvider);
-    _eventSubscription = _service.events.listen(_handleEvent);
-    unawaited(_restoreRecordingState());
+    if (Platform.isAndroid) {
+      unawaited(_restoreRecordingState());
+    }
   }
 
   final Ref _ref;
-  late final RecorderService _service;
+  RecorderService? _service;
   StreamSubscription<RecorderEvent>? _eventSubscription;
   Timer? _ticker;
   DateTime? _elapsedAnchorTime;
   Duration _elapsedAnchorValue = Duration.zero;
+
+  RecorderService get _recordingService {
+    final existingService = _service;
+    if (existingService != null) {
+      return existingService;
+    }
+
+    final service = _ref.read(recorderServiceProvider);
+    _service = service;
+    _eventSubscription = service.events.listen(_handleEvent);
+    return service;
+  }
 
   Future<void> startRecording(String courseName) async {
     if (state.isBusy) {
@@ -106,6 +118,7 @@ class RecordingController extends StateNotifier<RecordingUiState> {
     }
 
     final sessionStart = DateTime.now();
+    final service = _recordingService;
     state = state.copyWith(
       status: RecordingStatus.starting,
       courseName: courseName,
@@ -114,7 +127,7 @@ class RecordingController extends StateNotifier<RecordingUiState> {
       currentSegmentIndex: 1,
       completedFilePaths: const [],
       clearError: true,
-      canPauseResume: _service.supportsPauseResume,
+      canPauseResume: service.supportsPauseResume,
     );
 
     try {
@@ -123,7 +136,7 @@ class RecordingController extends StateNotifier<RecordingUiState> {
         courseName,
       );
 
-      final result = await _service.startRecording(
+      final result = await service.startRecording(
         RecordingRequest(
           courseName: courseName,
           courseDirectoryPath: courseDirectory.path,
@@ -157,7 +170,7 @@ class RecordingController extends StateNotifier<RecordingUiState> {
     _ticker?.cancel();
 
     try {
-      await _service.stopRecording();
+      await _recordingService.stopRecording();
       _ref.read(recordingsRefreshProvider.notifier).state++;
     } catch (error) {
       state = state.copyWith(
@@ -168,17 +181,18 @@ class RecordingController extends StateNotifier<RecordingUiState> {
   }
 
   Future<void> pauseOrResume() async {
-    if (!state.canPauseResume) {
+    final service = _service;
+    if (!state.canPauseResume || service == null) {
       return;
     }
 
     if (state.status == RecordingStatus.recording) {
-      await _service.pauseRecording();
+      await service.pauseRecording();
       return;
     }
 
     if (state.status == RecordingStatus.paused) {
-      await _service.resumeRecording();
+      await service.resumeRecording();
     }
   }
 
@@ -189,7 +203,8 @@ class RecordingController extends StateNotifier<RecordingUiState> {
 
   Future<void> _restoreRecordingState() async {
     try {
-      final snapshot = await _service.getRecordingState();
+      final service = _recordingService;
+      final snapshot = await service.getRecordingState();
       if (snapshot == null) {
         return;
       }
@@ -203,7 +218,7 @@ class RecordingController extends StateNotifier<RecordingUiState> {
         elapsed: snapshot.elapsed,
         currentSegmentIndex: snapshot.segmentIndex,
         currentFilePath: snapshot.filePath,
-        canPauseResume: _service.supportsPauseResume,
+        canPauseResume: service.supportsPauseResume,
         clearError: true,
       );
 

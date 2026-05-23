@@ -1,23 +1,30 @@
+import 'dart:async';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../data/settings_repository.dart';
 import '../domain/app_settings.dart';
 
 class SettingsController extends StateNotifier<AsyncValue<AppSettings>> {
-  SettingsController(this._repository) : super(const AsyncLoading()) {
-    _load();
+  SettingsController(this._repository)
+    : super(AsyncData(AppSettings.defaults())) {
+    unawaited(_load());
   }
 
   final SettingsRepository _repository;
+  bool _hasLocalChange = false;
 
   Future<void> _load() async {
     final settings = await _repository.load();
-    state = AsyncData(settings);
+    if (!_hasLocalChange) {
+      state = AsyncData(settings);
+    }
   }
 
   AppSettings? get currentSettings => state.valueOrNull;
 
   Future<void> updateSettings(AppSettings settings) async {
+    _hasLocalChange = true;
     state = AsyncData(settings);
     await _repository.save(settings);
   }
